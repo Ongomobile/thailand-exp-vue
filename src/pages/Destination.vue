@@ -4,6 +4,7 @@
 
 <script>
 import data from '@/locations.json'
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -21,19 +22,23 @@ export default {
     },
     async getWikiData(location) {
       try {
-        this.axios
-          .get(
-            `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`,
-            {
-              headers: {
-                'Access-Control-Allow-Origin':
-                  'https://tranquil-pithivier-56eedc.netlify.app/'
-              }
-            }
-          )
-          .then((response) => {
-            console.log(response.data)
-          })
+        const response = await axios.get(
+          `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`
+        )
+        console.log(response.data)
+        // this.axios
+        //   .get(
+        //     `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`,
+        //     {
+        //       headers: {
+        //         'Access-Control-Allow-Origin':
+        //           'https://tranquil-pithivier-56eedc.netlify.app/'
+        //       }
+        //     }
+        //   )
+        //   .then((response) => {
+        //     console.log(response.data)
+        //   })
       } catch (error) {
         console.log({ error })
       }
