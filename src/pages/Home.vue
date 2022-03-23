@@ -1,5 +1,5 @@
 <template>
-  <div class="landing-page-wrapper">
+  <div id="landingpage" class="landing-page-wrapper">
     <div class="landing-page-cta-wrapper">
       <h1 class="landing-page-headline">Thailand Explorer</h1>
       <img
@@ -18,7 +18,44 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    loadRandomBg() {
+      const IMG_URL = 'https://thailand-exp-images.s3-us-west-2.amazonaws.com/'
+      const backgroundImages = [
+        'riceLady.jpg',
+        'raileyBeach.jpg',
+        'monksTemple.jpg',
+        'monkeys.jpg',
+        'manChang.jpg',
+        'maeYai.jpg',
+        'girlsWater.jpg',
+        'girlChang.jpg',
+        'floatingMarket.jpg',
+        'buddha.jpg',
+        'boyBudah.jpg',
+        'ancient.jpg',
+        'thaiBackground.jpg',
+        'Yipeng.jpg',
+        'islands.jpg',
+        'Loy_Krathong.jpg',
+        'thaiBudah.jpg',
+        'komloy.jpg'
+      ]
+
+      const randomImage =
+        backgroundImages[Math.floor(Math.random() * backgroundImages.length)]
+      let landingPage = document.getElementById('landingpage')
+      landingPage.setAttribute(
+        'style',
+        'background-image: url(' + IMG_URL + randomImage + ')'
+      )
+    }
+  },
+  mounted() {
+    this.loadRandomBg()
+  }
+}
 </script>
 
 <style>
