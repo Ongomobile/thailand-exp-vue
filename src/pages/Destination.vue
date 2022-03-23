@@ -3,13 +3,27 @@
 </template>
 
 <script>
+import data from '@/locations.json'
 export default {
+  data() {
+    return {
+      pickedLocation: {}
+    }
+  },
   methods: {
     getLocationData() {
+      const locations = data.items
+      const random = Math.floor(Math.random() * locations.length)
+      let randomLocation = locations[random]
+      this.pickedLocation = randomLocation
+
+      console.log(this.pickedLocation)
+    },
+    async getWikiData(location) {
       try {
         this.axios
           .get(
-            'https://raw.githubusercontent.com/Ongomobile/thailand-explorer/master/public/locations.json'
+            `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`
           )
           .then((response) => {
             console.log(response.data)
@@ -21,6 +35,7 @@ export default {
   },
   mounted() {
     this.getLocationData()
+    this.getWikiData(this.pickedLocation.name)
   }
 }
 </script>
