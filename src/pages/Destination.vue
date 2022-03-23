@@ -20,10 +20,10 @@ export default {
 
       console.log(this.pickedLocation)
     },
-    async getWikiData(location) {
+    async getWikiData() {
       try {
         const response = await axios.get(
-          `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`
+          `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=buriram&gpslimit=1`
         )
         console.log(response.data)
         // this.axios
@@ -46,7 +46,7 @@ export default {
   },
   mounted() {
     this.getLocationData()
-    this.getWikiData(this.pickedLocation.name)
+    this.getWikiData()
   }
 }
 </script>
