@@ -20,25 +20,12 @@ export default {
 
       console.log(this.pickedLocation)
     },
-    async getWikiData() {
+    async getWikiData(location) {
       try {
         const response = await axios.get(
-          `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=buriram&gpslimit=1`
+          `https://en.wikivoyage.org/w/api.php?origin=*&action=query&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`
         )
         console.log(response.data)
-        // this.axios
-        //   .get(
-        //     `https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`,
-        //     {
-        //       headers: {
-        //         'Access-Control-Allow-Origin':
-        //           'https://tranquil-pithivier-56eedc.netlify.app/'
-        //       }
-        //     }
-        //   )
-        //   .then((response) => {
-        //     console.log(response.data)
-        //   })
       } catch (error) {
         console.log({ error })
       }
@@ -46,7 +33,7 @@ export default {
   },
   mounted() {
     this.getLocationData()
-    this.getWikiData()
+    this.getWikiData(this.pickedLocation.name)
   }
 }
 </script>
