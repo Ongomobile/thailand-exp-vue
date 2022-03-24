@@ -73,8 +73,14 @@ h6 {
   --fs-500: 1.25rem;
   /* body font */
   --fs-400: 1rem;
+  --headline-clr: #2e3f4e;
 }
 body {
   font-family: 'Roboto', sans-serif;
   font-size: var(--fs-400);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }

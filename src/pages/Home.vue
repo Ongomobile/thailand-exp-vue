@@ -1,5 +1,5 @@
 <template>
-  <div v-if="asyncDataStatus_ready" class="container">
+  <div v-if="asyncDataStatus_ready">
     <div id="landingpage" class="landing-page-wrapper">
       <div class="landing-page-cta-wrapper">
         <h1 class="landing-page-headline">Thailand Explorer</h1>

@@ -1,8 +1,11 @@
 <template>
   <div v-if="asyncDataStatus_ready" class="container">
-    <h1>Destination Page</h1>
+    <DestinationNav />
+    <div class="destination-map-wrapper">
+      <h2 class="destination-title">Explore {{ locationTitle }}</h2>
+      <GoogleMap :lat="lat" :lng="lng" />
+    </div>
     <img :src="locationImgUrl" alt="" />
-    <GoogleMap :lat="lat" :lng="lng" />
   </div>
 </template>
 
@@ -11,8 +14,9 @@ import data from '@/locations.json'
 import axios from 'axios'
 import asyncDataStatus from '@/mixins/asyncDataStatus'
 import GoogleMap from '@/components/GoogleMap'
+import DestinationNav from '@/components/DestinationNav'
 export default {
-  components: { GoogleMap },
+  components: { GoogleMap, DestinationNav },
   mixins: [asyncDataStatus],
   data() {
     return {
@@ -90,6 +94,11 @@ export default {
 </script>
 
 <style>
+.destination-title {
+  text-align: center;
+  color: var(--headline-clr);
+  margin-bottom: 0.8rem;
+}
 img {
   height: 250px;
   width: 250px;
