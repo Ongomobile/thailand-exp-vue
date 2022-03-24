@@ -1,9 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { createHead } from '@vueuse/head'
 import router from '@/router'
 
 const thalaindApp = createApp(App)
 thalaindApp.use(router)
+thalaindApp.use(createHead())
 
 // Base componernt logic
 const requireComponent = require.context(
