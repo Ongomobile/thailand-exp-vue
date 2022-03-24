@@ -9,13 +9,21 @@
         />
       </router-link>
       <h1 class="destination-headline">Thailand Explorer</h1>
-      <a href="#" class="new-destination-btn">New Adventure</a>
+      <button @click="reloadPage" class="new-destination-btn">
+        New Adventure
+      </button>
     </div>
   </nav>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    reloadPage() {
+      window.location.reload()
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -51,6 +59,8 @@ export default {}
   padding: 0.56rem 1rem;
   width: 10rem;
   text-align: center;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
