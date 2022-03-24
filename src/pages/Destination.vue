@@ -5,6 +5,9 @@
       <h2 class="destination-title">Explore {{ locationTitle }}</h2>
       <GoogleMap :lat="lat" :lng="lng" />
     </div>
+    <div class="destination-video-wrapper">
+      <YouTube />
+    </div>
     <img :src="locationImgUrl" alt="" />
   </div>
 </template>
@@ -15,8 +18,9 @@ import axios from 'axios'
 import asyncDataStatus from '@/mixins/asyncDataStatus'
 import GoogleMap from '@/components/GoogleMap'
 import DestinationNav from '@/components/DestinationNav'
+import YouTube from '@/components/YouTube'
 export default {
-  components: { GoogleMap, DestinationNav },
+  components: { GoogleMap, DestinationNav, YouTube },
   mixins: [asyncDataStatus],
   data() {
     return {
@@ -38,6 +42,16 @@ export default {
       this.lat = randomLocation.lat
       this.lng = randomLocation.lng
       this.locationTitle = this.pickedLocation.name
+    },
+    async getYouTubeVideoId() {
+      try {
+        const response = await axios.get(
+          `https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&q=${location}`
+        )
+        console.log(response.data)
+      } catch (error) {
+        console.log({ error })
+      }
     },
     async getWikiData(location) {
       try {
@@ -88,6 +102,7 @@ export default {
   async created() {
     this.getLocationData()
     await this.getWikiData(this.pickedLocation.name)
+    await this.getYouTubeVideoId()
     this.asyncDataStatus_fetched()
   }
 }
