@@ -43,10 +43,11 @@ export default {
       this.lng = randomLocation.lng
       this.locationTitle = this.pickedLocation.name
     },
-    async getYouTubeVideoId() {
+    async getYouTubeVideoId(location) {
+      console.log({ location })
       try {
         const response = await axios.get(
-          `https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.search.list?part=snippet&q=${location}`
+          `https://www.googleapis.com/youtube/v3/search?key="AIzaSyAiiVKqAveppqhACuLuiEC1mYJIP93t6Mw"&type=video&part=snippet&maxResults=5&q=${location}`
         )
         console.log(response.data)
       } catch (error) {
@@ -102,7 +103,7 @@ export default {
   async created() {
     this.getLocationData()
     await this.getWikiData(this.pickedLocation.name)
-    await this.getYouTubeVideoId()
+    await this.getYouTubeVideoId(this.pickedLocation.name)
     this.asyncDataStatus_fetched()
   }
 }
@@ -119,3 +120,4 @@ img {
   width: 250px;
 }
 </style>
+
