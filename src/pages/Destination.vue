@@ -2,6 +2,7 @@
   <div v-if="asyncDataStatus_ready" class="container">
     <h1>Destination Page</h1>
     <img :src="locationImgUrl" alt="" />
+    <GoogleMap :lat="lat" :lng="lng" />
   </div>
 </template>
 
@@ -9,7 +10,9 @@
 import data from '@/locations.json'
 import axios from 'axios'
 import asyncDataStatus from '@/mixins/asyncDataStatus'
+import GoogleMap from '@/components/GoogleMap'
 export default {
+  components: { GoogleMap },
   mixins: [asyncDataStatus],
   data() {
     return {
@@ -17,7 +20,9 @@ export default {
       locationTitle: '',
       locationImgUrl: null,
       locationDescription: '',
-      moreInfoLink: ''
+      moreInfoLink: '',
+      lat: '',
+      lng: ''
     }
   },
   methods: {
@@ -26,6 +31,8 @@ export default {
       const random = Math.floor(Math.random() * locations.length)
       let randomLocation = locations[random]
       this.pickedLocation = randomLocation
+      this.lat = randomLocation.lat
+      this.lng = randomLocation.lng
       this.locationTitle = this.pickedLocation.name
     },
     async getWikiData(location) {
