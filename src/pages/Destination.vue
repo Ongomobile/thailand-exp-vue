@@ -1,12 +1,16 @@
 <template>
-  <h1>Destination Page</h1>
-  <img :src="locationImgUrl" alt="" />
+  <div v-if="asyncDataStatus_ready" class="container">
+    <h1>Destination Page</h1>
+    <img :src="locationImgUrl" alt="" />
+  </div>
 </template>
 
 <script>
 import data from '@/locations.json'
 import axios from 'axios'
+import asyncDataStatus from '@/mixins/asyncDataStatus'
 export default {
+  mixins: [asyncDataStatus],
   data() {
     return {
       pickedLocation: {},
@@ -67,14 +71,13 @@ export default {
           ? item.thumbnail.source
           : 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/428394/chang.png'
       })
-
       this.locationImgUrl = imageUrl[0]
-      console.log(this.locationImgUrl)
     }
   },
-  created() {
+  async created() {
     this.getLocationData()
-    this.getWikiData(this.pickedLocation.name)
+    await this.getWikiData(this.pickedLocation.name)
+    this.asyncDataStatus_fetched()
   }
 }
 </script>

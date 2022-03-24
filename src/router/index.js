@@ -11,6 +11,12 @@ const routes = [
     name: 'Destination',
     component: () =>
       import(/* webpackChunkName: "Destination" */ '@/pages/Destination')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () =>
+      import(/* webpackChunkName: "NotFound" */ '@/pages/NotFound')
   }
 ]
 const router = createRouter({

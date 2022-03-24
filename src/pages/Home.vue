@@ -1,24 +1,28 @@
 <template>
-  <div id="landingpage" class="landing-page-wrapper">
-    <div class="landing-page-cta-wrapper">
-      <h1 class="landing-page-headline">Thailand Explorer</h1>
-      <img
-        class="logo-img"
-        src="https://res.cloudinary.com/dnpje4e34/image/upload/v1647989771/chang-logo_zgipn8.png"
-        alt="elepant logo"
-      />
-      <h3 class="landing-page-subheadline">
-        Explore Random Destinations In Thailand
-      </h3>
-      <router-link :to="{ name: 'Destination' }" class="landing-page-cta-btn">
-        Find Adventure
-      </router-link>
+  <div v-if="asyncDataStatus_ready" class="container">
+    <div id="landingpage" class="landing-page-wrapper">
+      <div class="landing-page-cta-wrapper">
+        <h1 class="landing-page-headline">Thailand Explorer</h1>
+        <img
+          class="logo-img"
+          src="https://res.cloudinary.com/dnpje4e34/image/upload/v1647989771/chang-logo_zgipn8.png"
+          alt="elepant logo"
+        />
+        <h3 class="landing-page-subheadline">
+          Explore Random Destinations In Thailand
+        </h3>
+        <router-link :to="{ name: 'Destination' }" class="landing-page-cta-btn">
+          Find Adventure
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import asyncDataStatus from '@/mixins/asyncDataStatus'
 export default {
+  mixins: [asyncDataStatus],
   methods: {
     loadRandomBg() {
       const IMG_URL = 'https://thailand-exp-images.s3-us-west-2.amazonaws.com/'
@@ -51,6 +55,9 @@ export default {
         'background-image: url(' + IMG_URL + randomImage + ')'
       )
     }
+  },
+  created() {
+    this.asyncDataStatus_fetched()
   },
   mounted() {
     this.loadRandomBg()
