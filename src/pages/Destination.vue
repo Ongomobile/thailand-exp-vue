@@ -6,7 +6,7 @@
       <GoogleMap :lat="lat" :lng="lng" />
     </div>
     <div class="destination-video-wrapper">
-      <YouTube />
+      <YouTube :video_id="vidId" />
     </div>
     <img :src="locationImgUrl" alt="" />
   </div>
@@ -30,7 +30,8 @@ export default {
       locationDescription: '',
       moreInfoLink: '',
       lat: '',
-      lng: ''
+      lng: '',
+      vidId: ''
     }
   },
   methods: {
@@ -44,12 +45,13 @@ export default {
       this.locationTitle = this.pickedLocation.name
     },
     async getYouTubeVideoId(location) {
-      console.log({ location })
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?key="AIzaSyAiiVKqAveppqhACuLuiEC1mYJIP93t6Mw"&type=video&part=snippet&maxResults=5&q=${location}`
+          `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAiiVKqAveppqhACuLuiEC1mYJIP93t6Mw&type=video&part=snippet&maxResults=1&q=${location}`
         )
-        console.log(response.data)
+        if (response.data) {
+          this.vidId = response.data.items[0].id.videoId
+        }
       } catch (error) {
         console.log({ error })
       }
