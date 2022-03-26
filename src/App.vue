@@ -30,12 +30,13 @@
     <meta name="twitter:card" content="summary_large_image" />
   </AppHead>
   <div class="conatiner">
-    <router-view
+    <router-view />
+    <!-- <router-view
       v-show="showPage"
       @ready="onPageReady"
       :key="$route.fullPath"
     />
-    <AppSpinner v-show="!showPage" />
+    <AppSpinner v-show="!showPage" /> -->
   </div>
 </template>
 
