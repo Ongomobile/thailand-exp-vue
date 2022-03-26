@@ -1,5 +1,5 @@
 <template>
-  <AppHead>
+  <Head>
     <title>Thailand Explorer</title>
     <meta
       name="description"
@@ -28,7 +28,7 @@
       content="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648084976/thai-exp-og_defbfp.jpg"
     />
     <meta name="twitter:card" content="summary_large_image" />
-  </AppHead>
+  </Head>
   <div class="conatiner">
     <router-view
       v-show="showPage"
@@ -40,9 +40,10 @@
 </template>
 
 <script>
+import { Head } from '@vueuse/head'
 export default {
   name: 'App',
-  components: {},
+  components: { Head },
   data() {
     return {
       showPage: false

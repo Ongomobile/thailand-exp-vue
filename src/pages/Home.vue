@@ -1,13 +1,13 @@
 <template>
   <div v-if="asyncDataStatus_ready">
-    <AppHead>
+    <Head>
       <title>Thailand Explorer</title>
       <meta
         property="og:title"
         content="Explore random destinations in Thailand"
       />
       <meta name="twitter:title" content="Thailand Explorer" />
-    </AppHead>
+    </Head>
     <div id="landingpage" class="landing-page-wrapper">
       <div class="landing-page-cta-wrapper">
         <h1 class="landing-page-headline">Thailand Explorer</h1>
@@ -29,7 +29,9 @@
 
 <script>
 import asyncDataStatus from '@/mixins/asyncDataStatus'
+import { Head } from '@vueuse/head'
 export default {
+  components: { Head },
   mixins: [asyncDataStatus],
   methods: {
     loadRandomBg() {
