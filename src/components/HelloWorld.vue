@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import GoogleMap from "@/components/GoogleMap";
-import YouTube from "@/components/YouTube";
+import GoogleMap from '@/components/GoogleMap'
+import YouTube from '@/components/YouTube'
 export default {
   components: {
     GoogleMap,
-    YouTube,
-  },
-};
+    YouTube
+  }
+}
 </script>
 
 <style>

@@ -92,7 +92,7 @@ export default {
     getLocationData() {
       const locations = data.items
       const random = Math.floor(Math.random() * locations.length)
-      let randomLocation = locations[random]
+      const randomLocation = locations[random]
       this.pickedLocation = randomLocation
       this.lat = randomLocation.lat
       this.lng = randomLocation.lng
@@ -115,7 +115,7 @@ export default {
         const response = await axios.get(
           `https://en.wikivoyage.org/w/api.php?origin=*&action=query&format=json&prop=pageimages%7Cextracts&exlimit=1&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&gpssearch=${location}&gpslimit=1`
         )
-        let wikiData = response.data
+        const wikiData = response.data
         if (wikiData) {
           this.setThumbnailImg(wikiData)
         }
@@ -126,7 +126,7 @@ export default {
       }
     },
     getDescriptionText(data) {
-      let parser = new DOMParser()
+      const parser = new DOMParser()
       const doc = parser.parseFromString(data, 'text/html')
 
       const text = doc.getElementsByTagName('p')
@@ -272,4 +272,3 @@ export default {
   }
 }
 </style>
-

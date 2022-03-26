@@ -12,7 +12,7 @@ module.exports = {
   },
 
   rules: {
-    'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-unused-vars': 'warn',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'space-before-function-paren': 'off'

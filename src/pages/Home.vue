@@ -57,7 +57,7 @@ export default {
 
       const randomImage =
         backgroundImages[Math.floor(Math.random() * backgroundImages.length)]
-      let landingPage = document.getElementById('landingpage')
+      const landingPage = document.getElementById('landingpage')
       landingPage.setAttribute(
         'style',
         'background-image: url(' + IMG_URL + randomImage + ')'
