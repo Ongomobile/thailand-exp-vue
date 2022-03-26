@@ -141,7 +141,7 @@ export default {
     formatDescriptionText(str) {
       const lastIndexOfSpace = str.lastIndexOf(' ')
       let moreLink = document.getElementById('readMoreLink')
-      moreLink.innerHTML`<a class="moreLink" target="_blank" href="https://en.wikivoyage.org/wiki/${this.locationTitle}">More information about ${this.locationTitle} from WikiVoyage &hellip;</a>`
+      moreLink.innerHTML = `<a class="moreLink" target="_blank" href="https://en.wikivoyage.org/wiki/${this.locationTitle}">More information about ${this.locationTitle} from WikiVoyage &hellip;</a>`
       if (lastIndexOfSpace === -1) {
         return str
       }
