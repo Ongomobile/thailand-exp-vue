@@ -31,7 +31,6 @@
 import asyncDataStatus from '@/mixins/asyncDataStatus'
 import { Head } from '@vueuse/head'
 export default {
-  components: { Head },
   mixins: [asyncDataStatus],
   methods: {
     loadRandomBg() {
