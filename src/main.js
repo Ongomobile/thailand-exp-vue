@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createHead } from '@vueuse/head'
 import router from '@/router'
+import { createHead } from '@vueuse/head'
 
 const thalaindApp = createApp(App)
 thalaindApp.use(router)

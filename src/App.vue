@@ -1,28 +1,31 @@
 <template>
   <AppHead>
-    <title>Vue.js 3 Master Class Forum</title>
-    <meta name="description" content="An awesome Vue.js 3 powered forum!" />
+    <title>Thailand Explorer</title>
+    <meta
+      name="description"
+      content="Explore cool random destinations in Thailand,places you never thought about visiting"
+    />
 
     <!-- Social -->
-    <meta property="og:title" content="Vue.js 3 Master Class Forum" />
+    <meta property="og:title" content="Thailand Explorer" />
     <meta
       property="og:description"
-      content="An Awesome Vue.js 3 powered forum!"
+      content="Explore cool random destinations in Thailand"
     />
     <meta
       property="og:image"
-      content="https://vueschool.io/media/f007f6057444d9a7f567163391d2b366/vuejs-3-master-class-not-transparent.jpg"
+      content="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648084976/thai-exp-og_defbfp.jpg"
     />
 
     <!-- Twitter -->
-    <meta name="twitter:title" content="Vue.js 3 Master Class Forum" />
+    <meta name="twitter:title" content="Thailand Explorer" />
     <meta
       name="twitter:description"
-      content="An Awesome Vue.js 3 powered forum!"
+      content="Explore cool random destinations in Thailand"
     />
     <meta
       name="twitter:image"
-      content="https://vueschool.io/media/f007f6057444d9a7f567163391d2b366/vuejs-3-master-class-not-transparent.jpg"
+      content="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648084976/thai-exp-og_defbfp.jpg"
     />
     <meta name="twitter:card" content="summary_large_image" />
   </AppHead>
