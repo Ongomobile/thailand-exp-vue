@@ -101,7 +101,7 @@ export default {
     async getYouTubeVideoId(location) {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAiiVKqAveppqhACuLuiEC1mYJIP93t6Mw&type=video&part=snippet&maxResults=1&q=${location}`
+          `https://www.googleapis.com/youtube/v3/search?key=${process.env.VUE_APP_API_KEY}&type=video&part=snippet&maxResults=1&q=${location}`
         )
         if (response.data) {
           this.vidId = response.data.items[0].id.videoId
