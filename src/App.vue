@@ -14,7 +14,7 @@
     />
     <meta
       property="og:image"
-      content="https://vueschool.io/media/f007f6057444d9a7f567163391d2b366/vuejs-3-master-class-not-transparent.jpg"
+      content="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648084976/thai-exp-og_defbfp.jpg"
     />
 
     <!-- Twitter -->
@@ -25,7 +25,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://vueschool.io/media/f007f6057444d9a7f567163391d2b366/vuejs-3-master-class-not-transparent.jpg"
+      content="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648084976/thai-exp-og_defbfp.jpg"
     />
     <meta name="twitter:card" content="summary_large_image" />
   </Head>
