@@ -3,7 +3,7 @@
     <title>Thailand Explorer</title>
     <meta
       name="description"
-      content="Explore cool random destinations in Thailand,places you never thought about visiting"
+      content="Explore cool random destinations in Thailand"
     />
 
     <!-- Social -->
