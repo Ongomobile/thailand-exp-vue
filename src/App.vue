@@ -29,7 +29,6 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
   </AppHead>
-  <!-- why -->
   <div class="conatiner">
     <router-view
       v-show="showPage"
