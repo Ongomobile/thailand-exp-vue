@@ -7,7 +7,7 @@ const thalaindApp = createApp(App)
 thalaindApp.use(router)
 thalaindApp.use(createHead())
 
-// Base componernt logic
+// Base component logic
 const requireComponent = require.context(
   './components',
   true,

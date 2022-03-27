@@ -1,13 +1,13 @@
 <template>
   <div v-if="asyncDataStatus_ready">
-    <Head>
+    <AppHead>
       <title>Thailand Explorer</title>
       <meta
         property="og:title"
-        content="Explore random destinations in Thailand"
+        content="Explore cool random destinations in Thailand"
       />
       <meta name="twitter:title" content="Thailand Explorer" />
-    </Head>
+    </AppHead>
     <div id="landingpage" class="landing-page-wrapper">
       <div class="landing-page-cta-wrapper">
         <h1 class="landing-page-headline">Thailand Explorer</h1>
@@ -29,7 +29,6 @@
 
 <script>
 import asyncDataStatus from '@/mixins/asyncDataStatus'
-import { Head } from '@vueuse/head'
 export default {
   mixins: [asyncDataStatus],
   methods: {
