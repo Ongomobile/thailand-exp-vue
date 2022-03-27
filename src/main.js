@@ -4,8 +4,9 @@ import router from '@/router'
 import { createHead } from '@vueuse/head'
 
 const thalaindApp = createApp(App)
+const head = createHead()
 thalaindApp.use(router)
-thalaindApp.use(createHead())
+thalaindApp.use(head)
 
 // Base component logic
 const requireComponent = require.context(
