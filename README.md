@@ -19,5 +19,3 @@ Thailand explorer is an app to explore random destinations in Thailand.
 - Google Maps API
 - YouTube API
 - Wikivoyage API
-
-![](https://komarev.com/ghpvc/?username=ongomobile)
