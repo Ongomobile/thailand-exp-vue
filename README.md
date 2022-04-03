@@ -2,8 +2,6 @@
 
 ![Project Image](https://res.cloudinary.com/dch4i7gjv/image/upload/v1648084976/thai-exp-og_defbfp.jpg)
 
----
-
 ## Description
 
 Thailand explorer is an app to explore random destinations in Thailand.
@@ -15,13 +13,9 @@ Thailand explorer is an app to explore random destinations in Thailand.
 - Data from API'S is generated with random location data.
 - In google map you can use the street view to see locations.
 
----
-
 #### Technologies
 
 - Vue js
 - Google Maps API
 - YouTube API
 - Wikivoyage API
-
----
