@@ -1,6 +1,6 @@
 <template>
   <GoogleMap
-    api-key="process.env.VUE_APP_API_KEY"
+    :api-key="apiKey"
     style="width: 100%; height: 50vh"
     :center="center"
     :zoom="15"
@@ -17,6 +17,11 @@ export default defineComponent({
   props: {
     lat: { type: Number, default: 14.99433 },
     lng: { type: Number, default: 103.1039 }
+  },
+  data() {
+    return {
+      apiKey: process.env.VUE_APP_API_KEY
+    }
   },
   setup(props) {
     const center = { lat: props.lat, lng: props.lng }
