@@ -51,7 +51,16 @@
           >
         </div>
       </div>
-
+      <div>
+        <a
+          :href="
+            `https://www.booking.com/city/th/` +
+            `${locationTitle}` +
+            `.en.html?aid=7929769&no_rooms=1&group_adults=2`
+          "
+          >Accomodations</a
+        >
+      </div>
       <div class="policies-wrapper">
         <a href="https://www.youtube.com/t/terms" class="policy-link"
           >YouTube terms of service</a
