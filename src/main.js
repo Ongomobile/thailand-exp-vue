@@ -2,14 +2,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'
 import { createHead } from '@vueuse/head'
-import VueAnalytics from 'vue-analytics'
+import VueGtag from 'vue-gtag'
 
 const thalaindApp = createApp(App)
 const head = createHead()
 thalaindApp.use(router)
 thalaindApp.use(head)
-thalaindApp.use(VueAnalytics, {
-  id: 'G-TPNM2S82M1'
+thalaindApp.use(VueGtag, {
+  config: { id: 'G-TPNM2S82M1' }
 })
 
 // Base component logic
