@@ -10,7 +10,7 @@
     <meta property="og:title" content="Thailand Explorer" />
     <meta
       property="og:description"
-      content="Explore cool random destinations in Thailand"
+      content="Find new places to explore in the land of smiles"
     />
     <meta
       property="og:image"
@@ -21,7 +21,7 @@
     <meta name="twitter:title" content="Thailand Explorer" />
     <meta
       name="twitter:description"
-      content="Explore cool random destinations in Thailand"
+      content="Find new places to explore in the land of smiles"
     />
     <meta
       name="twitter:image"
