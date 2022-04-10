@@ -285,6 +285,7 @@ export default {
   }
   .pegman-wrapper {
     max-width: 95%;
+    margin-bottom: 2rem;
   }
 
   .accomodation-img-wrapper {
