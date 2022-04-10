@@ -270,8 +270,9 @@ export default {
 }
 
 .video-section {
-  display: flex;
-  justify-content: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 5.312rem;
 }
 @media screen and (max-width: 768px) {
