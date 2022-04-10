@@ -7,28 +7,26 @@
         <GoogleMap :lat="lat" :lng="lng" />
       </div>
       <div class="destination-center-content">
-        <div class="video-wrapper">
-          <YouTube :video_id="vidId" />
-        </div>
-        <div class="destination-pegman-wrapper">
+        <div class="pegman-wrapper">
           <img
             src="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648164955/pegman-gif_tepdwj.gif"
             alt="pegman"
             class="pegman-img"
           />
-          <div class="pegman-text-content">
-            <h3 class="pegman-heading">
-              Hi, Want to see<br />stuff on the map?
-            </h3>
-            <ol class="pegman-list">
-              <li class="list-item">In bottom right corner of map zoom in.</li>
-              <li class="list-item">Drag the pegman to the area to explore.</li>
-              <li class="list-item">Drop pegman on blue line or blue dot.</li>
-              <li class="list-item">
-                To go back click back arrow top left of map.
-              </li>
-            </ol>
-          </div>
+          <h3 class="pegman-heading">
+            Drag me out from corner of map to see cool stuff ?
+          </h3>
+        </div>
+        <div class="accomodation-img-wrapper">
+          <a :href="bookingLink" target="_blank" class="accomodation-link">
+            Local Accomodations <br />
+            From Booking.com</a
+          >
+        </div>
+      </div>
+      <div class="video-section">
+        <div class="video-wrapper">
+          <YouTube :video_id="vidId" />
         </div>
       </div>
       <div class="destination-bottom-content-wrapper">
@@ -50,12 +48,6 @@
             &hellip;</a
           >
         </div>
-      </div>
-      <div class="accomodation-img-wrapper">
-        <a :href="bookingLink" target="_blank" class="accomodation-link">
-          Local Accomodations <br />
-          From Booking.com</a
-        >
       </div>
       <div class="policies-wrapper">
         <a href="https://www.youtube.com/t/terms" class="policy-link"
@@ -139,7 +131,7 @@ export default {
 
       const text = doc.getElementsByTagName('p')
       const descriptionText =
-        text[0].innerText + text[1].innerText.substring(0, 320)
+        text[0].innerText + text[1].innerText.substring(0, 200)
 
       const formattedDescription = (this.locationDescription =
         this.formatDescriptionText(descriptionText) + '...')
@@ -197,23 +189,25 @@ export default {
 
 .destination-center-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 5.312rem;
+}
+.pegman-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  height: 292px;
+  max-width: 45%;
+  box-shadow: 1px 1px 3px 0 rgb(55 64 71 / 66%);
 }
 
 .pegman-text-content {
   display: flex;
   flex-direction: column;
 }
-.destination-pegman-wrapper {
-  display: flex;
-  align-items: center;
-  padding: 2rem;
-  box-shadow: 1px 1px 3px 0 rgb(55 64 71 / 66%);
-}
 
 .pegman-heading {
-  margin-left: 1.5rem;
+  margin-left: 0.5rem;
 }
 
 .destination-text-content {
@@ -225,6 +219,8 @@ export default {
 
 .destination-bottom-content-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 5.312rem;
 }
 .destination-img-wrapper {
@@ -245,6 +241,7 @@ export default {
 
 .pegman-img {
   margin-right: 2rem;
+  height: 180px;
 }
 
 .moreLink {
@@ -257,12 +254,12 @@ export default {
   justify-content: center;
   height: 292px;
   width: 450px;
+  max-width: 45%;
   margin-bottom: 3rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('../assets/images/thairesort-450.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto;
 }
 
 .accomodation-link {
@@ -270,6 +267,12 @@ export default {
   font-size: 1.5rem;
   text-align: center;
   cursor: pointer;
+}
+
+.video-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5.312rem;
 }
 @media screen and (max-width: 768px) {
   .destination-center-content {
