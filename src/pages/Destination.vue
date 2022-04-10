@@ -277,7 +277,7 @@ export default {
 @media screen and (max-width: 768px) {
   .destination-center-content {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
   }
   .conatiner {
