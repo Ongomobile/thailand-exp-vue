@@ -51,8 +51,11 @@
           >
         </div>
       </div>
-      <div>
-        <a :href="bookingLink" target="_blank">Accomodations</a>
+      <div class="accomodation-img-wrapper">
+        <a :href="bookingLink" target="_blank" class="accomodation-link">
+          Local Accomodations <br />
+          From Booking.com</a
+        >
       </div>
       <div class="policies-wrapper">
         <a href="https://www.youtube.com/t/terms" class="policy-link"
@@ -248,6 +251,26 @@ export default {
   margin-top: 10px;
 }
 
+.accomodation-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 292px;
+  width: 450px;
+  margin-bottom: 3rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../assets/images/thairesort-450.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.accomodation-link {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+}
 @media screen and (max-width: 768px) {
   .destination-center-content {
     display: flex;
