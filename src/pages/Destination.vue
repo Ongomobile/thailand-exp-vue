@@ -283,9 +283,12 @@ export default {
   .conatiner {
     max-width: 100vw;
   }
-  .destination-pegman-wrapper {
-    max-width: 80vw;
-    margin-bottom: 5.312rem;
+  .pegman-wrapper {
+    max-width: 95%;
+  }
+
+  .accomodation-img-wrapper {
+    max-width: 95%;
   }
 
   .destination-bottom-content-wrapper {
