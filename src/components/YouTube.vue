@@ -3,8 +3,8 @@
     <YoutubeVue3
       ref="youtube"
       :videoid="video_id"
-      :width="480"
-      :height="320"
+      :width="640"
+      :height="360"
       :controls="1"
     />
   </div>
