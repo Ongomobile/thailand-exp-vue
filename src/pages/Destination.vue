@@ -14,7 +14,7 @@
             class="pegman-img"
           />
           <h3 class="pegman-heading">
-            Drag me out from corner of map to see cool stuff ?
+            Drag me out from corner of map to see cool stuff
           </h3>
         </div>
         <div class="accomodation-img-wrapper">
