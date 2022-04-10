@@ -52,14 +52,7 @@
         </div>
       </div>
       <div>
-        <a
-          :href="
-            `https://www.booking.com/city/th/` +
-            `${locationTitle}` +
-            `.en.html?aid=7929769&no_rooms=1&group_adults=2`
-          "
-          >Accomodations</a
-        >
+        <a :href="bookingLink" target="_blank">Accomodations</a>
       </div>
       <div class="policies-wrapper">
         <a href="https://www.youtube.com/t/terms" class="policy-link"
@@ -82,6 +75,7 @@ import asyncDataStatus from '@/mixins/asyncDataStatus'
 import GoogleMap from '@/components/GoogleMap'
 import DestinationNav from '@/components/DestinationNav'
 import YouTube from '@/components/YouTube'
+import BookingLinks from '@/booking-links.json'
 export default {
   components: { GoogleMap, DestinationNav, YouTube },
   mixins: [asyncDataStatus],
@@ -95,7 +89,8 @@ export default {
       lat: '',
       lng: '',
       vidId: '',
-      apiKey: process.env.VUE_APP_API_KEY
+      apiKey: process.env.VUE_APP_API_KEY,
+      bookingLink: ''
     }
   },
   methods: {
@@ -163,6 +158,14 @@ export default {
           : 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/428394/chang.png'
       })
       this.locationImgUrl = imageUrl[0]
+    },
+    getBookingLink(locationName) {
+      const bookingObj = BookingLinks.find(
+        (item) => item.Cities === locationName
+      )
+      this.bookingLink = bookingObj.URL
+      console.log(bookingObj.URL)
+      return bookingObj
     }
   },
   async created() {
@@ -170,6 +173,7 @@ export default {
     await this.getWikiData(this.pickedLocation.name)
     await this.getYouTubeVideoId(this.pickedLocation.name)
     this.asyncDataStatus_fetched()
+    this.getBookingLink(this.pickedLocation.name)
   }
 }
 </script>
