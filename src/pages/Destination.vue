@@ -8,19 +8,22 @@
       </div>
       <div class="destination-center-content">
         <div class="pegman-wrapper">
-          <img
-            src="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648164955/pegman-gif_tepdwj.gif"
-            alt="pegman"
-            class="pegman-img"
-          />
-          <h3 class="pegman-heading">
-            Drag me out from corner of map to see cool stuff
-          </h3>
+          <div class="pegman-img-wrapper">
+            <img
+              src="https://res.cloudinary.com/dch4i7gjv/image/upload/v1648164955/pegman-gif_tepdwj.gif"
+              alt="pegman"
+              class="pegman-img"
+            />
+          </div>
+          <div class="pegman-text-wrapper">
+            <h3 class="pegman-heading">
+              Drag me out from corner of map to see cool stuff
+            </h3>
+          </div>
         </div>
         <div class="accomodation-img-wrapper">
           <a :href="bookingLink" target="_blank" class="accomodation-link">
-            Local Accomodations <br />
-            From Booking.com</a
+            Local Accomodations</a
           >
         </div>
       </div>
@@ -30,23 +33,25 @@
         </div>
       </div>
       <div class="destination-bottom-content-wrapper">
-        <div class="destination-img-wrapper">
-          <img
-            :src="locationImgUrl"
-            alt="destination image"
-            class="destination-img"
-          />
-        </div>
-        <div class="destination-text-content">
-          {{ locationDescription }}
-          <a
-            id="readMorelink"
-            class="moreLink"
-            target="_blank"
-            :href="`https://en.wikivoyage.org/wiki/` + `${locationTitle}`"
-            >More information about {{ locationTitle }} from WikiVoyage
-            &hellip;</a
-          >
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img
+              :src="locationImgUrl"
+              class="card-img"
+              alt="destination image"
+            />
+          </div>
+          <div class="card-info">
+            {{ locationDescription }}<br />
+            <a
+              id="readMorelink"
+              class="moreLink"
+              target="_blank"
+              :href="`https://en.wikivoyage.org/wiki/` + `${locationTitle}`"
+              >More information about {{ locationTitle }} from WikiVoyage
+              &hellip;</a
+            >
+          </div>
         </div>
       </div>
       <div class="policies-wrapper">
@@ -183,22 +188,34 @@ export default {
 .destination-map-wrapper {
   padding: 2rem;
   margin-top: 2rem;
-  margin-bottom: 5.312rem;
-  box-shadow: 1px 1px 3px 0 rgb(55 64 71 / 66%);
+  border-radius: 6px;
 }
 
 .destination-center-content {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 5.312rem;
+  margin-bottom: 2.19rem;
+  padding-top: 5.312rem;
 }
 .pegman-wrapper {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  height: 292px;
-  max-width: 45%;
-  box-shadow: 1px 1px 3px 0 rgb(55 64 71 / 66%);
+  border: 1px solid #ddd;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 6px;
+  max-width: 50%;
+  margin-top: 60px;
+  max-height: 150px;
+}
+
+.pegman-img-wrapper {
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-top: -100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
 }
 
 .pegman-text-content {
@@ -210,11 +227,29 @@ export default {
   margin-left: 0.5rem;
 }
 
-.destination-text-content {
-  box-shadow: 1px 1px 3px 0 rgb(55 64 71 / 66%);
-  background-color: #fff;
-  max-width: 530px;
-  padding: 1.8rem;
+.card {
+  border-radius: 6px;
+  max-width: 91%;
+  margin-top: 60px;
+  border: 1px solid #ddd;
+}
+
+.card-img-wrapper {
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin: -110px auto 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 2rem;
 }
 
 .destination-bottom-content-wrapper {
@@ -223,16 +258,7 @@ export default {
   align-items: center;
   margin-bottom: 5.312rem;
 }
-.destination-img-wrapper {
-  height: 250px;
-  width: 250px;
-  margin-right: 2rem;
-  box-shadow: 1px 1px 3px 0 rgb(55 64 71 / 66%);
-}
-.destination-img {
-  width: 100%;
-  height: 100%;
-}
+
 .policies-wrapper {
   display: flex;
   justify-content: space-between;
@@ -260,11 +286,15 @@ export default {
     url('../assets/images/thairesort-450.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 6px;
 }
 
 .accomodation-link {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(56, 152, 236, 0.8);
+  border-radius: 5rem;
   text-align: center;
   cursor: pointer;
 }
@@ -273,8 +303,10 @@ export default {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5.312rem;
+  margin-bottom: 7.874rem;
+  border-radius: 6px;
 }
+
 @media screen and (max-width: 768px) {
   .destination-center-content {
     display: flex;
@@ -286,7 +318,7 @@ export default {
   }
   .pegman-wrapper {
     max-width: 95%;
-    margin-bottom: 2rem;
+    margin-bottom: 5.15rem;
   }
 
   .accomodation-img-wrapper {
