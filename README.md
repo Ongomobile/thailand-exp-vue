@@ -6,6 +6,8 @@
 
 Thailand explorer is an app to explore random destinations in Thailand.
 
+[Live Website](https://www.thailandexplorer.org/)
+
 ## Features
 
 - A random background image is rendered on each landing page refresh.
